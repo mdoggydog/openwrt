@@ -188,8 +188,8 @@ Signed-off-by: John Crispin <john@phrozen.org>
  
  config SND_SEQ_DEVICE
  	tristate
-@@ -27,7 +27,7 @@ config SND_RAWMIDI
- 	select SND_SEQ_DEVICE if SND_SEQUENCER != n
+@@ -40,7 +40,7 @@ config SND_UMP_LEGACY_RAWMIDI
+ 	  The device contains 16 substreams corresponding to UMP groups.
  
  config SND_COMPRESS_OFFLOAD
 -	tristate

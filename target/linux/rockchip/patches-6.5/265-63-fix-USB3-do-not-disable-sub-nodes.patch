@@ -20,7 +20,7 @@ Subject: [PATCH 83/85] fix USB3: do not disable sub-nodes
  
 --- a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
 +++ b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
-@@ -870,7 +870,6 @@ thermal_zones: thermal-zones {
+@@ -870,7 +870,6 @@
  			snps,dis-del-phy-power-chg-quirk;
  			snps,dis-tx-ipgap-linecheck-quirk;
  			quirk-skip-phy-init;
@@ -28,7 +28,7 @@ Subject: [PATCH 83/85] fix USB3: do not disable sub-nodes
  		};
  	};
  
-@@ -944,7 +943,6 @@ thermal_zones: thermal-zones {
+@@ -944,7 +943,6 @@
  			snps,dis-del-phy-power-chg-quirk;
  			snps,dis-tx-ipgap-linecheck-quirk;
  			snps,dis_rxdet_inp3_quirk;

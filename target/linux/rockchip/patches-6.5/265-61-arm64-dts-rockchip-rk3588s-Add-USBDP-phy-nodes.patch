@@ -92,7 +92,7 @@ Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
  		reg = <0x0 0xfee10000 0x0 0x100>;
 --- a/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
 +++ b/arch/arm64/boot/dts/rockchip/rk3588s.dtsi
-@@ -891,6 +891,33 @@ thermal_zones: thermal-zones {
+@@ -891,6 +891,33 @@
  		reg = <0x0 0xfd58c000 0x0 0x1000>;
  	};
  
@@ -126,7 +126,7 @@ Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
  	usb2phy2_grf: syscon@fd5d8000 {
  		compatible = "rockchip,rk3588-usb2phy-grf", "syscon", "simple-mfd";
  		reg = <0x0 0xfd5d8000 0x0 0x4000>;
-@@ -916,6 +943,17 @@ thermal_zones: thermal-zones {
+@@ -916,6 +943,17 @@
  		};
  	};
  
@@ -144,7 +144,7 @@ Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
  	usb2phy3_grf: syscon@fd5dc000 {
  		compatible = "rockchip,rk3588-usb2phy-grf", "syscon", "simple-mfd";
  		reg = <0x0 0xfd5dc000 0x0 0x4000>;
-@@ -966,6 +1004,11 @@ thermal_zones: thermal-zones {
+@@ -966,6 +1004,11 @@
  		reg = <0x0 0xfd5c4000 0x0 0x100>;
  	};
  
@@ -156,7 +156,7 @@ Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
  	ioc: syscon@fd5f0000 {
  		compatible = "rockchip,rk3588-ioc", "syscon";
  		reg = <0x0 0xfd5f0000 0x0 0x10000>;
-@@ -2572,6 +2615,37 @@ thermal_zones: thermal-zones {
+@@ -2626,6 +2669,37 @@
  		#dma-cells = <1>;
  	};
  

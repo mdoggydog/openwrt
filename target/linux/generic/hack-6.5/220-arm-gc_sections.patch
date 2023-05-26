@@ -12,9 +12,9 @@ Signed-off-by: Gabor Juhos <juhosg@openwrt.org>
 ---
 --- a/arch/arm/Kconfig
 +++ b/arch/arm/Kconfig
-@@ -125,6 +125,7 @@ config ARM
- 	select HAVE_UID16
+@@ -126,6 +126,7 @@ config ARM
  	select HAVE_VIRT_CPU_ACCOUNTING_GEN
+ 	select HOTPLUG_CORE_SYNC_DEAD if HOTPLUG_CPU
  	select IRQ_FORCED_THREADING
 +	select HAVE_LD_DEAD_CODE_DATA_ELIMINATION
  	select MODULES_USE_ELF_REL
@@ -32,7 +32,7 @@ Signed-off-by: Gabor Juhos <juhosg@openwrt.org>
  
 --- a/arch/arm/kernel/vmlinux.lds.S
 +++ b/arch/arm/kernel/vmlinux.lds.S
-@@ -75,7 +75,7 @@ SECTIONS
+@@ -74,7 +74,7 @@ SECTIONS
  	. = ALIGN(4);
  	__ex_table : AT(ADDR(__ex_table) - LOAD_OFFSET) {
  		__start___ex_table = .;
@@ -41,7 +41,7 @@ Signed-off-by: Gabor Juhos <juhosg@openwrt.org>
  		__stop___ex_table = .;
  	}
  
-@@ -100,24 +100,24 @@ SECTIONS
+@@ -99,24 +99,24 @@ SECTIONS
  	}
  	.init.arch.info : {
  		__arch_info_begin = .;

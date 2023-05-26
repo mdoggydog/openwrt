@@ -32,8 +32,8 @@ Signed-off-by: Marty Jones <mj8263788@gmail.com>
  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
 +dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-nanopi-neo3.dtb
  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-nanopi-r2c.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-nanopi-r2c-plus.dtb
  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-nanopi-r2s.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-orangepi-r1-plus.dtb
 --- /dev/null
 +++ b/arch/arm64/boot/dts/rockchip/rk3328-nanopi-neo3.dts
 @@ -0,0 +1,359 @@

@@ -56,7 +56,7 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
  	}								\
  									\
  	/* __*init sections */						\
-@@ -1004,6 +1014,8 @@
+@@ -1011,6 +1021,8 @@
  #define COMMON_DISCARDS							\
  	SANITIZER_DISCARDS						\
  	PATCHABLE_DISCARDS						\
