@@ -1,0 +1,54 @@
+From c2d18c6520e49344db1ef26d0ef908ddca67f8d9 Mon Sep 17 00:00:00 2001
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+Date: Thu, 6 Apr 2023 17:13:12 +0200
+Subject: [PATCH 46/58] dt-bindings: ata: ahci: add RK3588 AHCI controller
+
+Just like RK3568, the RK3588 has a DWC based AHCI controller.
+
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+ .../devicetree/bindings/ata/snps,dwc-ahci-common.yaml       | 6 ++++--
+ Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml    | 6 ++++--
+ 2 files changed, 8 insertions(+), 4 deletions(-)
+
+--- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
++++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci-common.yaml
+@@ -31,11 +31,11 @@ properties:
+       PM-alive clock, RxOOB detection clock, embedded PHYs reference (Rx/Tx)
+       clock, etc.
+     minItems: 1
+-    maxItems: 4
++    maxItems: 5
+ 
+   clock-names:
+     minItems: 1
+-    maxItems: 4
++    maxItems: 5
+     items:
+       oneOf:
+         - description: Application APB/AHB/AXI BIU clock
+@@ -50,6 +50,8 @@ properties:
+           const: rxoob
+         - description: SATA Ports reference clock
+           const: ref
++        - description: Rockchip RK3588 ASIC clock
++          const: asic
+ 
+   resets:
+     description:
+--- a/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
++++ b/Documentation/devicetree/bindings/ata/snps,dwc-ahci.yaml
+@@ -23,9 +23,11 @@ properties:
+         const: snps,dwc-ahci
+       - description: SPEAr1340 AHCI SATA device
+         const: snps,spear-ahci
+-      - description: Rockhip RK3568 AHCI controller
++      - description: Rockhip AHCI controller
+         items:
+-          - const: rockchip,rk3568-dwc-ahci
++          - enum:
++              - rockchip,rk3568-dwc-ahci
++              - rockchip,rk3588-dwc-ahci
+           - const: snps,dwc-ahci
+ 
+ patternProperties:
