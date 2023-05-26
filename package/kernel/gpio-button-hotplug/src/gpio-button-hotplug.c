@@ -506,13 +506,6 @@ static int gpio_keys_button_probe(struct platform_device *pdev,
 			goto out;
 		}
 
-		if (button->irq) {
-			dev_err(dev, "skipping button %s (only gpio buttons supported)\n",
-				button->desc);
-			bdata->b = &pdata->buttons[i];
-			continue;
-		}
-
 		if (gpio_is_valid(button->gpio)) {
 			/* legacy platform data... but is it the lookup table? */
 			bdata->gpiod = devm_gpiod_get_index(dev, desc, i,
@@ -538,8 +531,7 @@ static int gpio_keys_button_probe(struct platform_device *pdev,
 			struct device_node *child =
 				of_get_next_child(dev->of_node, prev);
 
-			bdata->gpiod = devm_gpiod_get_from_of_node(dev,
-				child, "gpios", 0, GPIOD_IN, desc);
+			bdata->gpiod = devm_gpiod_get_optional(dev, "reset", GPIOD_OUT_LOW);
 
 			prev = child;
 		}
